@@ -13,7 +13,7 @@ TEST(Compare, SameString) {
     EXPECT_TRUE(compare("course", "course"));
 }
 
-TEST(Compare, EmptyString) {}
+TEST(Compare, EmptyString) { EXPECT_TRUE(compare("", "")); }
 
 TEST(Compare, DiffString) {
     EXPECT_FALSE(compare("university", "course"));
@@ -48,5 +48,3 @@ TEST(ABS, CharWrapAroundAtBeginning) { EXPECT_FALSE(compare("\xffuniversity", "\
 TEST(Bug, Test) { EXPECT_FALSE(compare("foo", "moo")); }
 
 #endif
-
-/* DEXTOOL: THIS FILE IS MUTATED */
