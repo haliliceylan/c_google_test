@@ -3,10 +3,10 @@ project(flawless)
 include(CTest)
 
 add_library(gmock_gtest STATIC
-    ${CMAKE_CURRENT_LIST_DIR}/../../../../vendor/fused_gmock/gmock-gtest-all.cc
-    ${CMAKE_CURRENT_LIST_DIR}/../../../../vendor/fused_gmock/main.cc
+    ${CMAKE_CURRENT_LIST_DIR}/../vendor/fused_gmock/gmock-gtest-all.cc
+    ${CMAKE_CURRENT_LIST_DIR}/../vendor/fused_gmock/main.cc
     )
-target_include_directories(gmock_gtest PUBLIC "${CMAKE_CURRENT_LIST_DIR}/../../../../vendor/fused_gmock")
+target_include_directories(gmock_gtest PUBLIC "${CMAKE_CURRENT_LIST_DIR}/../vendor/fused_gmock")
 target_link_libraries(gmock_gtest PUBLIC "-lpthread")
 
 add_library(impl src/impl.cpp)
