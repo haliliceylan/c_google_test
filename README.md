@@ -1,6 +1,8 @@
 for run all tests
 "bazel test --test_output=all //:sample1_unittest"
 
+
+"bazel build //simulink_example:our_model" //  simulink model build
 remzi ke
 
 
