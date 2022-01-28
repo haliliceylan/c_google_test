@@ -5,6 +5,7 @@ for run all tests
 "bazel build //simulink_example:our_model" //  simulink model build
 remzi ke
 
+"bazel test --test_output=all //:sample1_unittest" // simulink model test example
 
 adımlar // 
 - Google test ile dextool mutate toolu kullanabilir mi (şuan hata veriyor)
