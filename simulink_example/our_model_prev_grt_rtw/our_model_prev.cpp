@@ -21,6 +21,11 @@
 #include "our_model_prev.h"
 #include "our_model_prev_private.h"
 
+
+int halil(int i){
+  return i + 1;
+}
+
 /*
  * This function updates continuous states using the ODE3 fixed-step
  * solver algorithm

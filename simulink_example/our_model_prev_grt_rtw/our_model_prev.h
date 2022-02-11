@@ -254,6 +254,8 @@ struct tag_RTM_our_model_prev_T {
   } Timing;
 };
 
+int halil(int);
+
 /* Class declaration for model our_model_prev */
 class our_model_prevModelClass {
   /* public data and function members */

@@ -402,7 +402,7 @@ int_T main(int_T argc, const char *argv[])
                              (boolean_T *)&rtmGetStopRequested(MODEL_INSTANCE.getRTM()));
 
     (void)printf("\n** starting the model **\n");
-
+    // TODO: buraya gtest gelecek
     /***********************************************************************
      * Execute (step) the model.  You may also attach rtOneStep to an ISR, *
      * in which case you replace the call to rtOneStep with a call to a    *
