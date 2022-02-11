@@ -7,9 +7,9 @@
  *
  * Code generation for model "our_model".
  *
- * Model version              : 1.8
+ * Model version              : 1.9
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Thu Jan 27 13:49:51 2022
+ * C++ source code generated on : Fri Feb 11 22:11:58 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -42,6 +42,6 @@
 #endif
 
 /* private model entry point functions */
-extern void our_model_derivatives(void);
+extern void our_model_derivatives();
 
 #endif                                 /* RTW_HEADER_our_model_private_h_ */

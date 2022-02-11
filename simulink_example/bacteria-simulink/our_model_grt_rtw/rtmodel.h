@@ -7,9 +7,9 @@
  *
  * Code generation for model "our_model".
  *
- * Model version              : 1.8
+ * Model version              : 1.9
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Thu Jan 27 13:49:51 2022
+ * C++ source code generated on : Fri Feb 11 22:11:58 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -25,5 +25,14 @@
  *  Includes the appropriate headers when we are using rtModel
  */
 #include "our_model.h"
+#define MODEL_CLASSNAME                our_modelModelClass
+#define MODEL_STEPNAME                 step
 #define GRTINTERFACE                   0
+
+/*
+ * ROOT_IO_FORMAT: 0 (Individual arguments)
+ * ROOT_IO_FORMAT: 1 (Structure reference)
+ * ROOT_IO_FORMAT: 2 (Part of model data structure)
+ */
+#define ROOT_IO_FORMAT                 2
 #endif                                 /* RTW_HEADER_rtmodel_h_ */

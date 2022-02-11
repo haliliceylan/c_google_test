@@ -8,6 +8,7 @@ COPTS = [
 cc_library(
     name = "simulink_libraries",
     srcs = glob(
+        ["**/*.cpp"],
         ["**/*.c"],
     ),
     hdrs = glob([
@@ -23,7 +24,7 @@ cc_library(
 
 cc_binary(
     name = "our_model",
-    srcs = ["bacteria-simulink/our_model_grt_rtw/our_model.c"],
+    srcs = ["bacteria-simulink/our_model_grt_rtw/our_model.cpp"],
     copts = COPTS,
     deps = [
         "//simulink_example:simulink_libraries",

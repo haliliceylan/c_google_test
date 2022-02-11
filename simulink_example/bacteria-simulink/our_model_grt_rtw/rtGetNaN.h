@@ -9,9 +9,9 @@
         *
     * Code generation for model "our_model".
     *
-    * Model version              : 1.8
+    * Model version              : 1.9
     * Simulink Coder version : 9.6 (R2021b) 14-May-2021
-        * C source code generated on : Thu Jan 27 13:49:51 2022
+        * C++ source code generated on : Fri Feb 11 22:11:58 2022
  * 
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -62,10 +62,16 @@
 
     
 
-        
+                    #ifdef __cplusplus
+            extern "C" {
+                #endif
+
         extern real_T rtGetNaN(void);
             extern real32_T rtGetNaNF(void);
-        
+                    #ifdef __cplusplus
+        } /* extern "C" */
+        #endif
+
 
 
     

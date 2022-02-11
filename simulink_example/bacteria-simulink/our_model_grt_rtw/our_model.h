@@ -7,9 +7,9 @@
  *
  * Code generation for model "our_model".
  *
- * Model version              : 1.8
+ * Model version              : 1.9
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Thu Jan 27 13:49:51 2022
+ * C++ source code generated on : Fri Feb 11 22:11:58 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -20,22 +20,19 @@
 
 #ifndef RTW_HEADER_our_model_h_
 #define RTW_HEADER_our_model_h_
-#include <float.h>
-#include <string.h>
-#include <stddef.h>
-#ifndef our_model_COMMON_INCLUDES_
-#define our_model_COMMON_INCLUDES_
+#include <cfloat>
+#include <cstring>
 #include "rtwtypes.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
 #include "rt_logging.h"
-#endif                                 /* our_model_COMMON_INCLUDES_ */
-
 #include "our_model_types.h"
 
 /* Shared type includes */
 #include "multiword_types.h"
 #include "rt_nonfinite.h"
+
+int halil(int);
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetContStateDisabled
@@ -167,34 +164,34 @@
 #endif
 
 /* Block signals (default storage) */
-typedef struct {
+struct B_our_model_T {
   real_T Integrator;                   /* '<Root>/Integrator' */
   real_T Sum;                          /* '<Root>/Sum' */
-} B_our_model_T;
+};
 
 /* Continuous states (default storage) */
-typedef struct {
+struct X_our_model_T {
   real_T Integrator_CSTATE;            /* '<Root>/Integrator' */
-} X_our_model_T;
+};
 
 /* State derivatives (default storage) */
-typedef struct {
+struct XDot_our_model_T {
   real_T Integrator_CSTATE;            /* '<Root>/Integrator' */
-} XDot_our_model_T;
+};
 
 /* State disabled  */
-typedef struct {
+struct XDis_our_model_T {
   boolean_T Integrator_CSTATE;         /* '<Root>/Integrator' */
-} XDis_our_model_T;
+};
 
 #ifndef ODE3_INTG
 #define ODE3_INTG
 
 /* ODE3 Integration Data */
-typedef struct {
+struct ODE3_IntgData {
   real_T *y;                           /* output */
   real_T *f[3];                        /* derivatives */
-} ODE3_IntgData;
+};
 
 #endif
 
@@ -259,22 +256,58 @@ struct tag_RTM_our_model_T {
   } Timing;
 };
 
-/* Block parameters (default storage) */
-extern P_our_model_T our_model_P;
+/* Class declaration for model our_model */
+class our_modelModelClass
+{
+  /* public data and function members */
+ public:
+  /* Copy Constructor */
+  our_modelModelClass(our_modelModelClass const&) =delete;
 
-/* Block signals (default storage) */
-extern B_our_model_T our_model_B;
+  /* Assignment Operator */
+  our_modelModelClass& operator= (our_modelModelClass const&) & = delete;
 
-/* Continuous states (default storage) */
-extern X_our_model_T our_model_X;
+  /* Real-Time Model get method */
+  RT_MODEL_our_model_T * getRTM();
 
-/* Model entry point functions */
-extern void our_model_initialize(void);
-extern void our_model_step(void);
-extern void our_model_terminate(void);
+  /* model start function */
+  void start();
 
-/* Real-time Model object */
-extern RT_MODEL_our_model_T *const our_model_M;
+  /* Initial conditions function */
+  void initialize();
+
+  /* model step function */
+  void step();
+
+  /* model terminate function */
+  static void terminate();
+
+  /* Constructor */
+  our_modelModelClass();
+
+  /* Destructor */
+  ~our_modelModelClass();
+
+  /* private data and function members */
+ private:
+  /* Block signals */
+  B_our_model_T our_model_B;
+
+  /* Tunable parameters */
+  static P_our_model_T our_model_P;
+
+  /* Block continuous states */
+  X_our_model_T our_model_X;
+
+  /* Continuous states update member function*/
+  void rt_ertODEUpdateContinuousStates(RTWSolverInfo *si );
+
+  /* Derivatives member function */
+  void our_model_derivatives();
+
+  /* Real-Time Model */
+  RT_MODEL_our_model_T our_model_M;
+};
 
 /*-
  * The generated code includes comments that allow you to trace directly

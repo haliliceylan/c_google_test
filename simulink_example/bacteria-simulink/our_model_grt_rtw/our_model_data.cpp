@@ -1,5 +1,5 @@
 /*
- * our_model_data.c
+ * our_model_data.cpp
  *
  * Student License - for use by students to meet course requirements and
  * perform academic research at degree granting institutions only.  Not
@@ -7,9 +7,9 @@
  *
  * Code generation for model "our_model".
  *
- * Model version              : 1.8
+ * Model version              : 1.9
  * Simulink Coder version : 9.6 (R2021b) 14-May-2021
- * C source code generated on : Thu Jan 27 13:49:51 2022
+ * C++ source code generated on : Fri Feb 11 22:11:58 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -22,7 +22,7 @@
 #include "our_model_private.h"
 
 /* Block parameters (default storage) */
-P_our_model_T our_model_P = {
+P_our_model_T our_modelModelClass::our_model_P{
   /* Expression: 100
    * Referenced by: '<Root>/Integrator'
    */
