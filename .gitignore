@@ -1,3 +1,4 @@
 bazel*
 html
 dextool_mutate.sqlite3
+.vscode
