@@ -23,6 +23,9 @@
 
 
 int halil(int i){
+  if(i > 2){
+    i == 3;
+  }
   return i + 1;
 }
 
