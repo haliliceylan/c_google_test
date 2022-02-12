@@ -1,0 +1,19 @@
+name "proc"
+description "Library for managing running processes and trees of them"
+authors "Joakim Brännström"
+copyright "Copyright © 2020, Joakim Brännström"
+license "BSL-1.0"
+
+targetPath "build"
+targetType "library"
+
+dependency "my" version="~>0.0.8"
+
+dflags "-verrors=context"
+
+configuration "library" {
+}
+
+configuration "unittest" {
+    dependency "silly" version="~>1.0.2"
+}
