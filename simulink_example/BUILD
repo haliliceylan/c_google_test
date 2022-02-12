@@ -41,7 +41,7 @@ cc_binary(
 )
 
 cc_test(
-  name = "our_model_unittest",
+  name = "our_model_test",
   size = "small",
   srcs = ["test/halil_function_test.cpp"],
   copts = COPTS,
