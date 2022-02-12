@@ -11,7 +11,7 @@ cc_library(
     srcs = glob(
         [
             "MATLAB_R2021a.app/**/*.c",
-            "MATLAB_R2021a.app/**/*.cpp",
+            #"MATLAB_R2021a.app/**/*.cpp",
             "our_model_prev_grt_rtw/**/*.c",
             "our_model_prev_grt_rtw/**/*.cpp"
         ],
@@ -29,7 +29,11 @@ cc_library(
 
 cc_binary(
     name = "our_model",
-    srcs = ["our_model_prev_grt_rtw/our_model_prev.cpp"],
+    srcs = [
+        "MATLAB_R2021a.app/rtw/c/src/common/rt_cppclass_main.cpp",
+        "our_model_prev_grt_rtw/our_model_prev.cpp"
+    ],
+
     copts = COPTS,
     deps = [
         "//simulink_example:simulink_libraries",
@@ -39,7 +43,7 @@ cc_binary(
 cc_test(
   name = "our_model_unittest",
   size = "small",
-  srcs = ["test/our_model_prev_unittest.cpp"],
+  srcs = ["test/halil_function_test.cpp"],
   copts = COPTS,
-  deps = ["@com_google_googletest//:gtest_main", "//simulink_example:our_model"],
+  deps = ["@com_google_googletest//:gtest_main", "//simulink_example:simulink_libraries"],
 )
