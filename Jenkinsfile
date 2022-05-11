@@ -31,5 +31,15 @@ make rl_test
       }
     }
 
+    stage('mutation test') {
+      steps {
+        sh '''cd simulink_example_cmake/bacteria-simulink
+/opt/dextool_install/bin/dextool mutate analyze
+/opt/dextool_install/bin/dextool mutate test'''
+        sh '''cd simulink_example_cmake/bacteria-simulink
+/opt/dextool_install/bin/dextool mutate report'''
+      }
+    }
+
   }
 }
