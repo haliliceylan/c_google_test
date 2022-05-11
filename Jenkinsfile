@@ -35,7 +35,7 @@ genhtml coverage.info --output-directory html
 
 '''
         archiveArtifacts 'simulink_example_cmake/bacteria-simulink/our_model_grt_rtw/build/html/*'
-        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'simulink_example_cmake/bacteria-simulink/our_model_grt_rtw/build/html/', reportFiles: 'index.html', reportName: 'Mutation Test Report', reportTitles: ''])
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'simulink_example_cmake/bacteria-simulink/our_model_grt_rtw/build/html/', reportFiles: 'index.html', reportName: 'Standart Test Report', reportTitles: ''])
       }
     }
 
