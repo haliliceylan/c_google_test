@@ -22,7 +22,7 @@ pipeline {
       }
     }
 
-    stage('Test') {
+    stage('test') {
       steps {
         sh '''cd simulink_example_cmake/bacteria-simulink/our_model_grt_rtw
 cd build
