@@ -34,7 +34,7 @@ lcov -c -d . --output-file coverage.info
 genhtml coverage.info --output-directory html
 
 '''
-        archiveArtifacts 'simulink_example_cmake/bacteria-simulink/our_model_grt_rtw/build/html'
+        archiveArtifacts 'simulink_example_cmake/bacteria-simulink/our_model_grt_rtw/build/html/*'
       }
     }
 
@@ -45,7 +45,7 @@ genhtml coverage.info --output-directory html
 /opt/dextool_install/bin/dextool mutate test'''
         sh '''cd simulink_example_cmake/bacteria-simulink
 /opt/dextool_install/bin/dextool mutate report'''
-        archiveArtifacts 'simulink_example_cmake/bacteria-simulink/html'
+        archiveArtifacts 'simulink_example_cmake/bacteria-simulink/html/*'
       }
     }
 
