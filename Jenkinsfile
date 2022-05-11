@@ -35,6 +35,7 @@ genhtml coverage.info --output-directory html
 
 '''
         archiveArtifacts 'simulink_example_cmake/bacteria-simulink/our_model_grt_rtw/build/html/*'
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'simulink_example_cmake/bacteria-simulink/our_model_grt_rtw/build/html/', reportFiles: 'index.html', reportName: 'Mutation Test Report', reportTitles: ''])
       }
     }
 
@@ -46,6 +47,8 @@ genhtml coverage.info --output-directory html
         sh '''cd simulink_example_cmake/bacteria-simulink
 /opt/dextool_install/bin/dextool mutate report'''
         archiveArtifacts 'simulink_example_cmake/bacteria-simulink/html/*'
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'simulink_example_cmake/bacteria-simulink/html/', reportFiles: 'index.html', reportName: 'Mutation Test Report', reportTitles: ''])
+
       }
     }
 
