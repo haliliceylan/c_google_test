@@ -25,6 +25,7 @@ pipeline {
     stage('manuel test') {
       steps {
         sh '''cd simulink_example_cmake/bacteria-simulink/our_model_grt_rtw
+cd build
 make rl_test
 ./rl_test'''
       }
