@@ -1,7 +1,7 @@
 pipeline {
   agent {
-    docker {
-      image 'haliliceylan/vscode-bazel-dextool-environment:latest'
+    dockerfile {
+      filename '.jenkins.Dockerfile'
     }
 
   }
@@ -28,6 +28,10 @@ pipeline {
 cd build
 make rl_test
 ./rl_test'''
+        sh '''cd simulink_example_cmake/bacteria-simulink/our_model_grt_rtw
+cd build
+lcov -c -d . --output-file coverage.info
+genhtml coverage.info --output-directory html'''
       }
     }
 
