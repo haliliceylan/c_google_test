@@ -51,6 +51,8 @@ target_compile_options(rl_test PRIVATE "-std=c++14" "-O3")
 target_compile_definitions(rl_test PRIVATE -DMODEL=our_model -DNUMST=2 -DNCSTATES=1 -DHAVESTDIO -DRT -DUSE_RTMODEL -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTID01EQ=1 -DMAT_FILE=1 -DONESTEPFCN=1 -DTERMFCN=1 -DMULTI_INSTANCE_CODE=1 -DINTEGER_CODE=0 -DMT=0)
 target_include_directories(rl_test PRIVATE ${START_DIR} ${START_DIR}/our_model_grt_rtw ${MATLAB_ROOT}/extern/include ${MATLAB_ROOT}/simulink/include ${MATLAB_ROOT}/rtw/c/src ${MATLAB_ROOT}/rtw/c/src/ext_mode/common)
 
+target_compile_options(rl_test PRIVATE "--coverage")
+target_link_libraries(rl_test gcov)
 
 ######################################################################
 ## Build success message
