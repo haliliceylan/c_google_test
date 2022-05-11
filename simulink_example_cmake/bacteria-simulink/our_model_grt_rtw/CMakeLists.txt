@@ -11,7 +11,15 @@ enable_testing()
 ## Path variables
 ######################################################################
 get_filename_component(START_DIR .. ABSOLUTE)
-set(MATLAB_ROOT /workspaces/c_google_test/simulink_example_cmake/R2021b CACHE PATH "Root of MATLAB installation")
+get_filename_component(simulink_example_cmake_dir ../.. ABSOLUTE)
+get_filename_component(bacteria-simulink_dir .. ABSOLUTE) 
+get_filename_component(our_model_grt_rtw . ABSOLUTE) 
+message(STATUS "START_DIR dir: ${START_DIR}")
+message(STATUS "bacteria-simulink_dir dir: ${bacteria-simulink_dir}")
+message(STATUS "simulink_example_cmake_dir dir: ${simulink_example_cmake_dir}")
+message(STATUS "our_model_grt_rtw dir: ${our_model_grt_rtw}")
+set(MATLAB_ROOT ${simulink_example_cmake_dir}/R2021b CACHE PATH "Root of MATLAB installation")
+message(STATUS "MATLAB_ROOT dir: ${MATLAB_ROOT}")
 
 ######################################################################
 ## Target definition and commands
@@ -29,7 +37,7 @@ endif()
 ## Tests
 ######################################################################
 set(TEST_SRC
-   "/workspaces/c_google_test/simulink_example_cmake/bacteria-simulink/test/halil_function_test.cpp"
+   "${bacteria-simulink_dir}/test/halil_function_test.cpp"
 )
 
 add_library(gtest ${GTEST_DIR}/gmock-gtest-all.cc ${GTEST_DIR}/main.cc)
